@@ -1,0 +1,35 @@
+.footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 2rem 0;
+  background: #020617;
+}
+
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.footer__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__links a {
+  color: #cbd5e1;
+  transition: color 0.2s ease;
+}
+
+.footer__links a:hover {
+  color: #38bdf8;
+}
+
+@media (max-width: 700px) {
+  .footer__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,1 +1,33 @@
-<p>navbar works!</p>
+<header class="navbar">
+  <div class="container navbar__content">
+    <a routerLink="/" class="navbar__brand">
+      Jorge Eduardo Bolivar Mojica
+    </a>
+
+    <nav class="navbar__links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Home
+      </a>
+
+      <a routerLink="/about" routerLinkActive="active">
+        About
+      </a>
+
+      <a routerLink="/projects" routerLinkActive="active">
+        Projects
+      </a>
+
+      <a routerLink="/skills" routerLinkActive="active">
+        Skills
+      </a>
+
+      <a routerLink="/experience" routerLinkActive="active">
+        Experience
+      </a>
+
+      <a routerLink="/contact" routerLinkActive="active">
+        Contact
+      </a>
+    </nav>
+  </div>
+</header>
