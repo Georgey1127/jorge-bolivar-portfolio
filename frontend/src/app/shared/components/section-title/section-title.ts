@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-section-title',
@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './section-title.html',
   styleUrl: './section-title.scss',
 })
-export class SectionTitle {}
+export class SectionTitle {
+  @Input() eyebrow = '';
+  @Input() title = '';
+  @Input() description = '';
+}
