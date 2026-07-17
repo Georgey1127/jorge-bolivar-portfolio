@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Experience as WorkExperience } from '../../../core/models/experience.model';
 
 @Component({
   selector: 'app-experience-card',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './experience-card.html',
   styleUrl: './experience-card.scss',
 })
-export class ExperienceCard {}
+export class ExperienceCard {
+  @Input({ required: true }) experience!: WorkExperience;
+}

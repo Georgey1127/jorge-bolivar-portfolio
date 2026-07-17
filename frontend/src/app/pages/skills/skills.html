@@ -1,1 +1,15 @@
-<p>skills works!</p>
+<section class="page-section">
+  <div class="container">
+    <app-section-title
+      eyebrow="Skills"
+      title="Technical skills and tools"
+      description="A summary of the technologies, tools, and software engineering concepts I have used across professional roles, academic projects, and personal development."
+    ></app-section-title>
+
+    <div class="skills-grid">
+      @for (skillCategory of skillCategories; track skillCategory.title) {
+        <app-skill-card [skillCategory]="skillCategory"></app-skill-card>
+      }
+    </div>
+  </div>
+</section>
