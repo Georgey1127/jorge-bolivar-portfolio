@@ -1,8 +1,14 @@
 import { Router } from 'express';
-import { skills } from '../data/portfolio.data.js';
+import { prisma } from '../lib/prisma.js';
 
 export const skillsRouter = Router();
 
-skillsRouter.get('/', (_req, res) => {
+skillsRouter.get('/', async (_req, res) => {
+  const skills = await prisma.skillCategory.findMany({
+    orderBy: {
+      sortOrder: 'asc',
+    },
+  });
+
   res.json(skills);
 });

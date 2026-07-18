@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Project {
+  id               String   @id
+  title            String
+  shortDescription String
+  description      String
+  technologies     String[]
+  githubUrl        String?
+  liveUrl          String?
+  highlights       String[]
+  sortOrder        Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model SkillCategory {
+  id        String   @id @default(cuid())
+  title     String
+  skills    String[]
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Experience {
+  id        String   @id @default(cuid())
+  company   String
+  role      String
+  location  String
+  startDate String
+  endDate   String
+  bullets   String[]
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}

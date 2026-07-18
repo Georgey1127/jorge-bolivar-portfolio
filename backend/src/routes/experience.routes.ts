@@ -1,8 +1,14 @@
 import { Router } from 'express';
-import { experiences } from '../data/portfolio.data.js';
+import { prisma } from '../lib/prisma.js';
 
 export const experienceRouter = Router();
 
-experienceRouter.get('/', (_req, res) => {
+experienceRouter.get('/', async (_req, res) => {
+  const experiences = await prisma.experience.findMany({
+    orderBy: {
+      sortOrder: 'asc',
+    },
+  });
+
   res.json(experiences);
 });
