@@ -63,13 +63,19 @@
           }
         </div>
 
-        <button type="submit" class="btn btn--primary">
-          Send Message
+        <button type="submit" class="btn btn--primary" [disabled]="isSubmitting">
+          {{ isSubmitting ? 'Sending...' : 'Send Message' }}
         </button>
 
         @if (messageSent) {
           <p class="form-success">
-            Thank you. Your message was captured successfully. Backend delivery will be connected later.
+            Thank you. Your message was sent successfully.
+          </p>
+        }
+
+        @if (submitError) {
+          <p class="form-error">
+            {{ submitError }}
           </p>
         }
       </form>

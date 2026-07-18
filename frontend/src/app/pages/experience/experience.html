@@ -6,10 +6,12 @@
       description="A summary of my experience in AI automation, frontend development, REST API integrations, testing, debugging, documentation, and software delivery."
     ></app-section-title>
 
-    <div class="experience-list">
-      @for (experience of experiences; track experience.company) {
-        <app-experience-card [experience]="experience"></app-experience-card>
-      }
-    </div>
+    @if (experiences$ | async; as experiences) {
+      <div class="experience-list">
+        @for (experience of experiences; track experience.company) {
+          <app-experience-card [experience]="experience"></app-experience-card>
+        }
+      </div>
+    }
   </div>
 </section>

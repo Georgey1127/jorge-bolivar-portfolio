@@ -1,6 +1,6 @@
 <section class="page-section">
   <div class="container">
-    @if (project) {
+    @if (project$ | async; as project) {
       <a routerLink="/projects" class="back-link">
         ← Back to Projects
       </a>

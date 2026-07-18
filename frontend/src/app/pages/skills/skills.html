@@ -6,10 +6,12 @@
       description="A summary of the technologies, tools, and software engineering concepts I have used across professional roles, academic projects, and personal development."
     ></app-section-title>
 
-    <div class="skills-grid">
-      @for (skillCategory of skillCategories; track skillCategory.title) {
-        <app-skill-card [skillCategory]="skillCategory"></app-skill-card>
-      }
-    </div>
+    @if (skillCategories$ | async; as skillCategories) {
+      <div class="skills-grid">
+        @for (skillCategory of skillCategories; track skillCategory.title) {
+          <app-skill-card [skillCategory]="skillCategory"></app-skill-card>
+        }
+      </div>
+    }
   </div>
 </section>
