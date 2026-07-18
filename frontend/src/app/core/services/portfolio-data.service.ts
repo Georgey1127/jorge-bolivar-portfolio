@@ -17,6 +17,7 @@ export class PortfolioDataService {
         description:
           'A data processing and visualization application built in Visual Studio using C# and .NET. The app reads CSV stock market data, validates records, performs calculations, and generates candlestick charts for stock trend analysis.',
         technologies: ['C#', '.NET', 'Visual Studio', 'CSV Processing', 'Data Visualization'],
+        githubUrl: '',
         highlights: [
           'Implemented CSV parsing, validation, and calculation logic.',
           'Generated candlestick charts for historical stock analysis.',
@@ -31,6 +32,7 @@ export class PortfolioDataService {
         description:
           'A team based academic project developed at USF using COBOL, Git, GitHub, VS Code, and Docker containers. The team followed Scrum practices and rotated roles across Scrum Master, Developer, and Tester.',
         technologies: ['COBOL', 'Git', 'GitHub', 'Docker', 'Scrum'],
+        githubUrl: '',
         highlights: [
           'Developed professional networking features for college students.',
           'Worked through sprint planning, user stories, demos, and testing.',
