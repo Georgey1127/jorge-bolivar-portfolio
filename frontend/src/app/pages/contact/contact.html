@@ -1,1 +1,78 @@
-<p>contact works!</p>
+<section class="page-section">
+  <div class="container">
+    <app-section-title
+      eyebrow="Contact"
+      title="Let’s connect"
+      description="Reach out if you want to discuss software engineering roles, AI automation projects, frontend development, or collaboration opportunities."
+    ></app-section-title>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+
+        <p>
+          I am currently looking for software engineering, AI automation,
+          frontend, full stack, and data related opportunities.
+        </p>
+
+        <div class="contact-info__links">
+          <a href="mailto:jorgebolivarm27@gmail.com">
+            jorgebolivarm27&#64;gmail.com
+          </a>
+
+          <a href="https://www.linkedin.com/in/jorge-eduardo-bolivar-mojica" target="_blank">
+            LinkedIn
+          </a>
+
+          <a href="https://github.com/Georgy1127" target="_blank">
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" formControlName="name" placeholder="Your name" />
+
+          @if (contactForm.controls.name.touched && contactForm.controls.name.invalid) {
+            <p class="form-error">Please enter your name.</p>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email" placeholder="your.email@example.com" />
+
+          @if (contactForm.controls.email.touched && contactForm.controls.email.invalid) {
+            <p class="form-error">Please enter a valid email address.</p>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            rows="6"
+            formControlName="message"
+            placeholder="Write your message here"
+          ></textarea>
+
+          @if (contactForm.controls.message.touched && contactForm.controls.message.invalid) {
+            <p class="form-error">Please enter a message with at least 10 characters.</p>
+          }
+        </div>
+
+        <button type="submit" class="btn btn--primary">
+          Send Message
+        </button>
+
+        @if (messageSent) {
+          <p class="form-success">
+            Thank you. Your message was captured successfully. Backend delivery will be connected later.
+          </p>
+        }
+      </form>
+    </div>
+  </div>
+</section>
